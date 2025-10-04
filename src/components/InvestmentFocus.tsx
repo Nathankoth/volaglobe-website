@@ -1,0 +1,71 @@
+import { Cpu, Building2, Wind, Store } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const InvestmentFocus = () => {
+  const focusAreas = [
+    {
+      icon: Cpu,
+      title: "Technology & AI",
+      description: "Early-stage startups applying AI to real problems.",
+    },
+    {
+      icon: Building2,
+      title: "Real Estate & Infrastructure",
+      description: "Value-accretive development and asset strategies.",
+    },
+    {
+      icon: Wind,
+      title: "Renewable Energy",
+      description: "Reliable energy projects with strong returns.",
+    },
+    {
+      icon: Store,
+      title: "Consumer Services",
+      description: "Scalable services with repeatable unit economics.",
+    },
+  ];
+
+  return (
+    <section id="focus" className="py-24 bg-card">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            Investment Focus
+          </h2>
+          <div className="w-20 h-1 bg-accent mx-auto mb-6" />
+          <p className="text-lg text-foreground/70">
+            We target high-potential ventures across four strategic sectors
+          </p>
+        </div>
+
+        {/* Focus Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {focusAreas.map((area, index) => {
+            const Icon = area.icon;
+            return (
+              <Card
+                key={index}
+                className="border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1 group"
+              >
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Icon className="w-7 h-7 text-accent" />
+                  </div>
+                  <CardTitle className="text-xl font-heading">{area.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed">
+                    {area.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default InvestmentFocus;
