@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Facebook, Twitter, Instagram } from "lucide-react";
+import { siteConfig, getConfiguredSocials, isSocialConfigured } from "@/config/site";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -61,53 +62,63 @@ const Footer = () => {
               <h4 className="font-semibold mb-3">Connect</h4>
               <div className="space-y-3 mb-6">
                 <a
-                  href="mailto:invest@volarisglobal.com"
+                  href={`mailto:${siteConfig.contact.investorEmail}`}
                   className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  invest@volarisglobal.com
+                  {siteConfig.contact.investorEmail}
                 </a>
               </div>
 
-              {/* Social Icons */}
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://linkedin.com/company/volaris-global-limited"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
-                  aria-label="Visit Volaris Global Limited on LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://facebook.com/volarisglobal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
-                  aria-label="Visit Volaris Global Limited on Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://twitter.com/volarisglobal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
-                  aria-label="Visit Volaris Global Limited on X (Twitter)"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://instagram.com/volarisglobal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
-                  aria-label="Visit Volaris Global Limited on Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
+              {/* Social Icons - Only show configured social media */}
+              {getConfiguredSocials().length > 0 && (
+                <div className="flex items-center gap-4">
+                  {isSocialConfigured('linkedin') && (
+                    <a
+                      href={siteConfig.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-foreground/70 hover:text-accent transition-colors"
+                      aria-label="Visit Volaris Global Limited on LinkedIn"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {isSocialConfigured('facebook') && (
+                    <a
+                      href={siteConfig.socials.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-foreground/70 hover:text-accent transition-colors"
+                      aria-label="Visit Volaris Global Limited on Facebook"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                  )}
+                  {isSocialConfigured('twitter') && (
+                    <a
+                      href={siteConfig.socials.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-foreground/70 hover:text-accent transition-colors"
+                      aria-label="Visit Volaris Global Limited on X (Twitter)"
+                    >
+                      <Twitter className="w-5 h-5" />
+                    </a>
+                  )}
+                  {isSocialConfigured('instagram') && (
+                    <a
+                      href={siteConfig.socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-foreground/70 hover:text-accent transition-colors"
+                      aria-label="Visit Volaris Global Limited on Instagram"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 

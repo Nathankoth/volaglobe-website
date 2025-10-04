@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mail, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const InvestorCTA = () => {
   return (
@@ -22,7 +23,7 @@ const InvestorCTA = () => {
               size="lg"
               onClick={() =>
                 (window.location.href =
-                  "mailto:invest@volarisglobal.com?subject=Investor%20Enquiry")
+                  `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
               }
               className="bg-accent hover:bg-accent-dark text-accent-foreground text-base px-8 group"
             >
@@ -31,7 +32,7 @@ const InvestorCTA = () => {
             </Button>
 
             <p className="text-sm text-muted-foreground mt-6">
-              invest@volarisglobal.com
+              {siteConfig.contact.investorEmail}
             </p>
           </div>
         </div>

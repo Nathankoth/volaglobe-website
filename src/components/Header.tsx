@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,12 +54,12 @@ const Header = () => {
               aria-label="Volaris — brand logo"
             >
               <img 
-                src="/assets/branding/volaris_full.png" 
+                src={siteConfig.navigation.logo.full} 
                 alt="Volaris — brand logo" 
                 className="hidden sm:block h-16 md:h-20 w-auto max-w-[240px] md:max-w-[260px]"
               />
               <img 
-                src="/assets/branding/volaris_mark.png" 
+                src={siteConfig.navigation.logo.mark} 
                 alt="Volaris — brand logo" 
                 className="sm:hidden h-12 w-12"
               />
@@ -83,7 +84,7 @@ const Header = () => {
             <Button
               onClick={() =>
                 (window.location.href =
-                  "mailto:invest@volarisglobal.com?subject=Investor%20Enquiry")
+                  `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
               }
               className="bg-accent hover:bg-accent-dark text-white focus:ring-2 focus:ring-accent focus:ring-offset-2"
             >
@@ -118,7 +119,7 @@ const Header = () => {
               <Button
                 onClick={() =>
                   (window.location.href =
-                    "mailto:invest@volarisglobal.com?subject=Investor%20Enquiry")
+                    `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
                 }
                 className="bg-accent hover:bg-accent-dark text-white w-full focus:ring-2 focus:ring-accent focus:ring-offset-2"
               >
