@@ -1,7 +1,7 @@
 # Volaris Global Limited — Official Website
 
 > **Strategic Investments & Advisory**  
-> Professional landing page showcasing Volaris Global's vision, focus areas, and leadership team.
+> One-page corporate site showcasing Volaris Global's vision, focus areas, and leadership team.
 
 ---
 
