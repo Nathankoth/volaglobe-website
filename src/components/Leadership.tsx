@@ -36,6 +36,7 @@ const Leadership = () => {
                 alt={`${member.name} - ${member.role}`}
                 name={member.name}
                 role={member.role}
+                initials={member.initials}
               />
 
               {/* Info */}

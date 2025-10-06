@@ -53,7 +53,7 @@ export const siteConfig = {
         role: "Founder / Chief Executive Officer (CEO)",
         tagline: "Visionary founder driving growth and innovation.",
         linkedin: "https://www.linkedin.com/in/ogunbajo-nathaniel",
-        image: "",
+        image: "", // Will show initials fallback
         bioLong: "Ogunbajo Nathaniel is the Founder and Chief Executive Officer of Volaris Global Limited. With a clear vision of building a world-class company that bridges innovation, investment, and sustainable growth, he is the driving force behind the strategic direction of the business. Nathaniel brings a unique blend of entrepreneurial instinct, creative problem solving, and long-term vision that positions Volaris as an emerging player on the global stage. He focuses on shaping investor relations, guiding overall company culture, and creating an environment where innovation thrives. His leadership centers on building scalable systems, attracting the right partnerships, and making Volaris a trusted platform for growth-minded ventures.",
       },
       {
@@ -62,7 +62,7 @@ export const siteConfig = {
         role: "Co-Founder / Strategic Partner",
         tagline: "Focused on operations, partnerships, and aligning execution.",
         linkedin: "https://www.linkedin.com/in/olayitan-hafis",
-        image: "",
+        image: "", // Will show initials fallback
         bioLong: "Olaitan Hafis is the Co-Founder and Strategic Partner at Volaris Global Limited. Hafis plays a central role in shaping the company's operational backbone and ensuring strategic objectives translate into actionable business outcomes. He is particularly focused on stakeholder engagement, building reliable structures for partnerships, and aligning operations with Volaris' long-term growth plans. With a strong emphasis on accountability, execution, and sustainable expansion, Hafis ensures that the company's day-to-day activities remain anchored in its vision. His perspective as a co-founder adds depth to the leadership team and reinforces Volaris' commitment to long-term investor confidence.",
       },
       {
@@ -71,7 +71,7 @@ export const siteConfig = {
         role: "Mentor · Advisor · Technical Lead (MCP, MCT)",
         tagline: "Technical mentor and advisor — cloud architecture, developer workflows, and production readiness.",
         linkedin: "https://www.linkedin.com/in/ugoji-nkechika-christian",
-        image: "",
+        image: "/assets/branding/avatars/ugoji_nkechika_christian.png", // Provided avatar
         bioLong: "Ugoji Nkechika Christian (MCP, MCT) is a seasoned technical leader and mentor who specializes in scalable architecture, cloud strategy, and developer productivity. He advises Volaris on technical roadmaps, infrastructure choices, and secure deployment practices, ensuring that engineering decisions align with long-term business goals. Ugoji is particularly skilled at turning strategic product thinking into reliable, maintainable systems that investors can trust.",
       },
       {
@@ -80,7 +80,7 @@ export const siteConfig = {
         role: "Head of Data",
         tagline: "Head of Data — analytics, governance, and ML-backed insights for investment decisions.",
         linkedin: "https://www.linkedin.com/in/akintunde-abimbola-agbonde",
-        image: "",
+        image: "/assets/branding/avatars/akintunde_abimbola_agbonde.png", // Provided avatar
         bioLong: "Akintunde Abimbola Agbonde leads Volaris' data capabilities. A seasoned data leader with deep experience in analytics, data governance, and ML-driven insight pipelines, Akintunde builds the systems that turn property and market data into investor-grade signals. He is focused on reliable data operations, reproducible models, and clear reporting that supports strategic decision-making and demonstrates measurable value to stakeholders.",
       },
       // Add new team members here - they will automatically get consistent styling
