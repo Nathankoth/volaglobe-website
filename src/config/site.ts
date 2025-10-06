@@ -1,6 +1,10 @@
 // Site Configuration
 // Update these values to customize your site without touching the code
 
+import ogunbajoImg from "@/assets/ogunbadru.jpg";
+import olaitanImg from "@/assets/olayton.jpg";
+import mrchrisImg from "@/assets/mrchris.jpg";
+
 export const siteConfig = {
   // Company Information
   company: {
@@ -53,7 +57,7 @@ export const siteConfig = {
         role: "Founder / Chief Executive Officer (CEO)",
         tagline: "Visionary founder driving growth and innovation.",
         linkedin: "https://www.linkedin.com/in/ogunbajo-nathaniel",
-        image: "/assets/ogunbadru.jpg", // Update this path as needed
+        image: ogunbajoImg,
         bioLong: "Ogunbajo Nathaniel is the Founder and Chief Executive Officer of Volaris Global Limited. With a clear vision of building a world-class company that bridges innovation, investment, and sustainable growth, he is the driving force behind the strategic direction of the business. Nathaniel brings a unique blend of entrepreneurial instinct, creative problem solving, and long-term vision that positions Volaris as an emerging player on the global stage. He focuses on shaping investor relations, guiding overall company culture, and creating an environment where innovation thrives. His leadership centers on building scalable systems, attracting the right partnerships, and making Volaris a trusted platform for growth-minded ventures.",
       },
       {
@@ -62,7 +66,7 @@ export const siteConfig = {
         role: "Co-Founder / Strategic Partner",
         tagline: "Focused on operations, partnerships, and aligning execution.",
         linkedin: "https://www.linkedin.com/in/olayitan-hafis",
-        image: "/assets/olayton.jpg", // Update this path as needed
+        image: olaitanImg,
         bioLong: "Olaitan Hafis is the Co-Founder and Strategic Partner at Volaris Global Limited. Hafis plays a central role in shaping the company's operational backbone and ensuring strategic objectives translate into actionable business outcomes. He is particularly focused on stakeholder engagement, building reliable structures for partnerships, and aligning operations with Volaris' long-term growth plans. With a strong emphasis on accountability, execution, and sustainable expansion, Hafis ensures that the company's day-to-day activities remain anchored in its vision. His perspective as a co-founder adds depth to the leadership team and reinforces Volaris' commitment to long-term investor confidence.",
       },
       {
@@ -71,7 +75,7 @@ export const siteConfig = {
         role: "Advisory Partner",
         tagline: "Dedicated to supporting strategic development and long-term vision.",
         linkedin: "https://www.linkedin.com/in/mr-chris",
-        image: "/assets/mrchris.jpg", // Update this path as needed
+        image: mrchrisImg,
         bioLong: "Mr. Chris is an Advisory Partner for Volaris Global Limited. Bringing years of experience in technology development, product architecture, and mentorship, he provides crucial guidance on how Volaris builds and scales its technical foundations. His role extends beyond pure development — he shapes the way the company approaches problem-solving, system design, and digital transformation. As an advisor, he ensures Volaris makes forward-thinking decisions that stand up to both technical and market challenges. His mentorship helps nurture the team's capability to transform vision into a product pipeline that is both sustainable and competitive.",
       },
       // Add new team members here - they will automatically get consistent styling
