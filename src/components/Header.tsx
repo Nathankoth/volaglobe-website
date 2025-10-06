@@ -55,13 +55,24 @@ const Header = () => {
             >
               <img 
                 src={siteConfig.navigation.logo.full} 
-                alt="Volaris — brand logo" 
-                className="hidden sm:block h-16 md:h-20 w-auto max-w-[240px] md:max-w-[260px]"
+                alt="Volaris Global" 
+                className="brand-logo hidden sm:block"
+                style={{
+                  height: '48px',
+                  maxHeight: '56px',
+                  width: 'auto',
+                  display: 'block'
+                }}
               />
               <img 
                 src={siteConfig.navigation.logo.mark} 
-                alt="Volaris — brand logo" 
-                className="sm:hidden h-12 w-12"
+                alt="Volaris Global" 
+                className="brand-logo sm:hidden"
+                style={{
+                  height: '40px',
+                  width: 'auto',
+                  display: 'block'
+                }}
               />
             </button>
           </div>
