@@ -1,74 +1,42 @@
-import { FaFlask, FaCogs, FaChartLine, FaBrain } from 'react-icons/fa';
-
 const ServicesGrid = () => {
-  const services = [
-    {
-      title: 'Professional & Scientific Services',
-      icon: <FaFlask className="text-accent" />,
-      list: ['Consultancy', 'Research & Development']
-    },
-    {
-      title: 'Digital Transformation',
-      icon: <FaCogs className="text-accent" />,
-      list: ['Emerging tech', 'Advanced visualization']
-    },
-    {
-      title: 'AI & Data Analytics',
-      icon: <FaBrain className="text-accent" />,
-      list: ['AI models', 'Data pipelines', 'Decision analytics']
-    },
-    {
-      title: 'Innovation & Business Development',
-      icon: <FaChartLine className="text-accent" />,
-      list: ['Investor support', 'Strategic growth']
-    }
-  ];
-
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-          Our Core Services
-        </h2>
-        <p className="text-md text-muted-foreground mb-8 max-w-3xl mx-auto">
-          Volaris Global Limited provides professional, scientific, and technical services 
-          across diverse sectors with a focus on innovation and growth.
-        </p>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <article 
-              key={index} 
-              className="p-6 bg-white/90 rounded-lg shadow-sm hover:shadow-lg transition-all duration-200 border border-border/50"
-            >
-              <div className="text-accent mb-4 flex justify-center">
-                <div className="p-3 bg-accent/10 rounded-full">
-                  {service.icon}
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-foreground">
-                {service.title}
-              </h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                {service.list.map((item, idx) => (
-                  <li key={idx} className="flex items-center">
-                    <span className="text-accent mr-2">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-        
-        {/* Legal compliance section */}
-        <details className="mt-8 text-left max-w-4xl mx-auto">
-          <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground transition-colors">
-            Legal / Registered Activities
-          </summary>
-          <div className="mt-4 p-4 bg-muted/30 rounded-lg text-xs text-muted-foreground leading-relaxed">
-            VALORIS GLOBAL LIMITED PROVIDES PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES INCLUDING CONSULTANCY, RESEARCH AND DEVELOPMENT, DIGITAL TRANSFORMATION, AND THE APPLICATION OF EMERGING TECHNOLOGIES SUCH AS ARTIFICIAL INTELLIGENCE, DATA ANALYTICS, AND ADVANCED VISUALIZATION TOOLS, WHILE SUPPORTING INNOVATION AND BUSINESS DEVELOPMENT ACROSS DIVERSE SECTORS.
+    <section id="services" className="py-20 bg-gray-50">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-10">Our Core Services & Investment Focus</h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Core Services cards */}
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Professional & Scientific Services</h3>
+            <p>Consultancy, research, development, and innovation-driven growth across diverse sectors.</p>
           </div>
-        </details>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Digital Transformation</h3>
+            <p>Technology, AI, and scalable solutions that address real-world business problems.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">AI & Data Analytics</h3>
+            <p>Applying machine learning and AI to unlock insights, efficiency, and business opportunities.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Innovation & Business Development</h3>
+            <p>Helping early-stage startups and ventures grow with strategy and resource alignment.</p>
+          </div>
+
+          {/* Investment Focus cards */}
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Real Estate & Infrastructure</h3>
+            <p>Creative development, asset strategy, and value-driven investments in infrastructure.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Renewable Energy</h3>
+            <p>Reliable energy projects with strong returns and sustainable growth potential.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-xl mb-2">Customer Service</h3>
+            <p>Scalable services with reputable units and strong economic models.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
