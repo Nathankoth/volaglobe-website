@@ -107,7 +107,7 @@
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -131,6 +131,24 @@
   margin-bottom: 12px;
   display: flex;
   justify-content: center;
+}
+
+/* Responsive Services Grid */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
 }
 
 /* Mobile Menu */

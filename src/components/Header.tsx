@@ -29,7 +29,6 @@ const Header = () => {
     { label: "Home", id: "hero" },
     { label: "About", id: "about" },
     { label: "Services", id: "services" },
-    { label: "Focus", id: "focus" },
     { label: "Team", id: "team" },
     { label: "Contact", id: "contact" },
   ];
@@ -47,7 +46,7 @@ const Header = () => {
           </div>
 
           {/* Center nav links - Desktop only */}
-          <nav className="nav-center" role="navigation">
+          <nav className="nav-center hidden md:flex" role="navigation">
             {navLinks.map((link) => (
               <a 
                 key={link.id}
@@ -64,7 +63,7 @@ const Header = () => {
           </nav>
 
           {/* CTA on right - Desktop only */}
-          <div className="nav-cta">
+          <div className="nav-cta hidden md:block">
             <a
               href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
               className="btn--primary"
@@ -76,7 +75,7 @@ const Header = () => {
           {/* Mobile Menu Button - Right side */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="hamburger-btn"
+            className="hamburger-btn md:hidden"
             aria-label="Open navigation menu"
             aria-expanded={isMobileMenuOpen}
           >

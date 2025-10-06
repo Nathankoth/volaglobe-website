@@ -47,35 +47,38 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
-              Our Core Services & Investment Focus
-            </h2>
-            <div className="w-20 h-1 bg-accent mx-auto mb-6" />
-            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-              Delivering professional, scientific, and technical services across diverse sectors with strategic investment focus
-            </p>
-          </div>
+    <section id="services" className="py-24 bg-gray-100">
+      {/* Full-width background */}
+      <div className="w-full">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+                Our Core Services & Investment Focus
+              </h2>
+              <div className="w-20 h-1 bg-accent mx-auto mb-6" />
+              <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+                Delivering professional, scientific, and technical services across diverse sectors with strategic investment focus
+              </p>
+            </div>
 
-          {/* Services Grid */}
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={service.key} className="service-card">
-                <div className="icon">
-                  {service.icon}
+            {/* Services Grid */}
+            <div className="services-grid">
+              {services.map((service, index) => (
+                <div key={service.key} className="service-card">
+                  <div className="icon">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
