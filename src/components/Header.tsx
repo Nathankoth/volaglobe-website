@@ -35,83 +35,81 @@ const Header = () => {
   ];
 
   return (
-    <header className="navbar sticky top-0 left-0 right-0 z-50 transition-all duration-[220ms] ease-out bg-primary/[0.88] backdrop-blur-[4px] border-b border-white/[0.06]">
-      <div className="nav-container max-w-[1200px] mx-auto px-6">
-        <div className="flex items-center gap-4 h-[72px]">
-          {/* Logo - Left side, larger size */}
-          <div className="brand flex-shrink-0">
-            <Logo 
-              onClick={() => scrollToSection("hero")}
-              showMarkOnly={false}
-            />
-          </div>
-
-          {/* Desktop Navigation - Centered */}
-          <nav className="nav-center hidden md:flex flex-1 items-center justify-center" role="navigation">
-            <ul className="flex gap-7 lg:gap-8 list-none m-0 p-0 items-center">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-sm font-semibold text-[#F3EFF5] hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1 min-h-[44px] min-w-[44px] flex items-center"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Desktop CTA - Right side */}
-          <div className="nav-cta hidden md:flex flex-shrink-0">
-            <Button
-              onClick={() =>
-                (window.location.href =
-                  `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
-              }
-              className="bg-accent hover:bg-accent-dark text-white focus:ring-2 focus:ring-accent focus:ring-offset-2"
-            >
-              Request Investor Pack
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-[#F3EFF5] hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded p-1"
-            aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+    <header className="navbar fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
+      <div className="container mx-auto flex items-center justify-between px-8 py-4">
+        
+        {/* Logo on left */}
+        <div className="flex-shrink-0">
+          <Logo 
+            onClick={() => scrollToSection("hero")}
+            showMarkOnly={false}
+          />
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden pb-6 animate-in fade-in slide-in-from-top-2 duration-200" role="navigation">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-left text-base font-medium text-[#F3EFF5] hover:text-accent transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded px-2"
-                >
-                  {link.label}
-                </button>
-              ))}
-              <Button
-                onClick={() =>
-                  (window.location.href =
-                    `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
-                }
-                className="bg-accent hover:bg-accent-dark text-white w-full focus:ring-2 focus:ring-accent focus:ring-offset-2"
-              >
-                Request Investor Pack
-              </Button>
-            </div>
-          </nav>
-        )}
+        {/* Center nav links */}
+        <nav className="flex-1 flex justify-center space-x-10 text-white font-semibold hidden md:flex" role="navigation">
+          {navLinks.map((link) => (
+            <a 
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.id);
+              }}
+              className="hover:text-green-400 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* CTA on right */}
+        <div className="flex-shrink-0">
+          <a
+            href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
+            className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Request Investor Pack
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden text-white hover:text-green-400 transition-colors"
+          aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <nav className="md:hidden bg-black/95 backdrop-blur-md pb-6 animate-in fade-in slide-in-from-top-2 duration-200" role="navigation">
+          <div className="container mx-auto px-8 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.id);
+                }}
+                className="text-left text-base font-medium text-white hover:text-green-400 transition-colors py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold w-full text-center transition-colors"
+            >
+              Request Investor Pack
+            </a>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };
