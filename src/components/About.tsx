@@ -24,9 +24,18 @@ const About = () => {
           <div className="space-y-12">
             {/* Paragraph */}
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed text-center">
-              Volaris Global Limited is a strategic investments and advisory group focused on
-              identifying and scaling high-potential ventures across Technology,
-              Real Estate, Renewable Energy and Consumer Services.
+              VALORIS GLOBAL LIMITED PROVIDES<br/>
+              PROFESSIONAL, SCIENTIFIC, AND<br/>
+              TECHNICAL SERVICES INCLUDING<br/>
+              CONSULTANCY, RESEARCH AND<br/>
+              DEVELOPMENT, DIGITAL<br/>
+              TRANSFORMATION, AND THE APPLICATION<br/>
+              OF EMERGING TECHNOLOGIES SUCH AS<br/>
+              ARTIFICIAL INTELLIGENCE, DATA<br/>
+              ANALYTICS, AND ADVANCED<br/>
+              VISUALIZATION TOOLS, WHILE<br/>
+              SUPPORTING INNOVATION AND BUSINESS<br/>
+              DEVELOPMENT ACROSS DIVERSE.
             </p>
 
             {/* Highlights */}

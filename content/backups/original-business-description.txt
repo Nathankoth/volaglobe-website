@@ -1,0 +1,11 @@
+Original Business Description (Backup)
+
+From: src/components/About.tsx
+Date: 2025-10-06
+
+Original text:
+"Volaris Global Limited is a strategic investments and advisory group focused on
+identifying and scaling high-potential ventures across Technology,
+Real Estate, Renewable Energy and Consumer Services."
+
+This text was replaced with the client-provided CAC registration text.
