@@ -1,88 +1,36 @@
-import { FaFlask, FaCogs, FaBrain, FaRocket, FaBuilding, FaLeaf, FaUsers } from 'react-icons/fa';
+import React from "react";
 
-const ServicesGrid = () => {
-  const services = [
-    {
-      key: "professional",
-      title: "Professional & Scientific Services",
-      description: "Consultancy, research, development, and innovation-driven growth across diverse sectors.",
-      icon: <FaFlask className="text-accent" />
-    },
-    {
-      key: "digital",
-      title: "Digital Transformation",
-      description: "Technology, AI, and scalable solutions that address real-world business problems.",
-      icon: <FaCogs className="text-accent" />
-    },
-    {
-      key: "ai",
-      title: "AI & Data Analytics",
-      description: "Applying machine learning and AI to unlock insights, efficiency, and business opportunities.",
-      icon: <FaBrain className="text-accent" />
-    },
-    {
-      key: "innovation",
-      title: "Innovation & Business Development",
-      description: "Helping early-stage startups and ventures grow with strategy and resource alignment.",
-      icon: <FaRocket className="text-accent" />
-    },
-    {
-      key: "realestate",
-      title: "Real Estate & Infrastructure",
-      description: "Creative development, asset strategy, and value-driven investments in infrastructure.",
-      icon: <FaBuilding className="text-accent" />
-    },
-    {
-      key: "renewable",
-      title: "Renewable Energy",
-      description: "Reliable energy projects with strong returns and sustainable growth potential.",
-      icon: <FaLeaf className="text-accent" />
-    },
-    {
-      key: "customerservice",
-      title: "Customer Service",
-      description: "Scalable service models with reputable units and strong economics.",
-      icon: <FaUsers className="text-accent" />
-    }
-  ];
+/* Provide icons under public/assets/icons/*.svg with these filenames, or the component will fallback to simple emoji. */
+const CARDS = [
+  { key: "professional", title: "Professional & Scientific Services", desc: "Consultancy, research, development, and innovation-driven growth across diverse sectors.", icon: "consultancy.svg" },
+  { key: "digital", title: "Digital Transformation", desc: "Technology, AI, and scalable solutions that address real-world business problems.", icon: "digital.svg" },
+  { key: "ai", title: "AI & Data Analytics", desc: "Applying machine learning and AI to unlock insights, efficiency, and business opportunities.", icon: "ai.svg" },
+  { key: "innovation", title: "Innovation & Business Development", desc: "Helping early-stage startups and ventures grow with strategy and resource alignment.", icon: "innovation.svg" },
+  { key: "realestate", title: "Real Estate & Infrastructure", desc: "Creative development, asset strategy, and value-driven investments in infrastructure.", icon: "realestate.svg" },
+  { key: "renewable", title: "Renewable Energy", desc: "Reliable energy projects with strong returns and sustainable growth potential.", icon: "renewable.svg" },
+  { key: "customerservice", title: "Customer Service", desc: "Scalable service models with reputable units and strong economics.", icon: "customerservice.svg" }
+];
 
+export default function ServicesGrid() {
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
-              Our Core Services & Investment Focus
-            </h2>
-            <div className="w-20 h-1 bg-accent mx-auto mb-6" />
-            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-              Delivering professional, scientific, and technical services across diverse sectors with strategic investment focus
-            </p>
-          </div>
-        </div>
-      </div>
+    <section id="services" className="services-bleed" aria-labelledby="services-title">
+      <div className="services-inner">
+        <h2 id="services-title" className="services-title">Our Core Services &amp; Investment Focus</h2>
 
-      {/* Full-bleed Services Grid */}
-      <div className="services-bleed">
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={service.key} className="service-card">
-              <div className="icon">
-                {service.icon}
+          {CARDS.map(c => (
+            <article key={c.key} className="service-card" role="article">
+              <div className="service-icon">
+                {/* If you don't have the svg, place a file at /public/assets/icons/<icon> */}
+                <img src={`/assets/icons/${c.icon}`} alt="" aria-hidden="true" onError={(e)=> (e.currentTarget.style.display = "none")} />
+                <span className="icon-fallback" aria-hidden="true">🔹</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">
-                {service.title}
-              </h3>
-              <p className="text-foreground/70 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default ServicesGrid;
+}
