@@ -3,7 +3,8 @@
 
 import ogunbajoImg from "@/assets/ogunbadru.jpg";
 import olaitanImg from "@/assets/olayton.jpg";
-import mrchrisImg from "@/assets/mrchris.jpg";
+import ugojiImg from "@/assets/ugoji_nkechika_christian.jpg";
+import akintundeImg from "@/assets/akintunde_abimbola_agbonde.jpg";
 
 export const siteConfig = {
   // Company Information
@@ -70,13 +71,22 @@ export const siteConfig = {
         bioLong: "Olaitan Hafis is the Co-Founder and Strategic Partner at Volaris Global Limited. Hafis plays a central role in shaping the company's operational backbone and ensuring strategic objectives translate into actionable business outcomes. He is particularly focused on stakeholder engagement, building reliable structures for partnerships, and aligning operations with Volaris' long-term growth plans. With a strong emphasis on accountability, execution, and sustainable expansion, Hafis ensures that the company's day-to-day activities remain anchored in its vision. His perspective as a co-founder adds depth to the leadership team and reinforces Volaris' commitment to long-term investor confidence.",
       },
       {
-        name: "Mr. Chris",
-        initials: "MC",
-        role: "Advisory Partner",
-        tagline: "Dedicated to supporting strategic development and long-term vision.",
-        linkedin: "https://www.linkedin.com/in/mr-chris",
-        image: mrchrisImg,
-        bioLong: "Mr. Chris is an Advisory Partner for Volaris Global Limited. Bringing years of experience in technology development, product architecture, and mentorship, he provides crucial guidance on how Volaris builds and scales its technical foundations. His role extends beyond pure development — he shapes the way the company approaches problem-solving, system design, and digital transformation. As an advisor, he ensures Volaris makes forward-thinking decisions that stand up to both technical and market challenges. His mentorship helps nurture the team's capability to transform vision into a product pipeline that is both sustainable and competitive.",
+        name: "Ugoji Nkechika Christian",
+        initials: "UNC",
+        role: "Mentor · Advisor · Technical Lead (MCP, MCT)",
+        tagline: "Technical mentor and advisor — cloud architecture, developer workflows, and production readiness.",
+        linkedin: "https://www.linkedin.com/in/ugoji-nkechika-christian",
+        image: ugojiImg,
+        bioLong: "Ugoji Nkechika Christian (MCP, MCT) is a seasoned technical leader and mentor who specializes in scalable architecture, cloud strategy, and developer productivity. He advises Volaris on technical roadmaps, infrastructure choices, and secure deployment practices, ensuring that engineering decisions align with long-term business goals. Ugoji is particularly skilled at turning strategic product thinking into reliable, maintainable systems that investors can trust.",
+      },
+      {
+        name: "Akintunde Abimbola Agbonde",
+        initials: "AA",
+        role: "Head of Data",
+        tagline: "Head of Data — analytics, governance, and ML-backed insights for investment decisions.",
+        linkedin: "https://www.linkedin.com/in/akintunde-abimbola-agbonde",
+        image: akintundeImg,
+        bioLong: "Akintunde Abimbola Agbonde leads Volaris' data capabilities. A seasoned data leader with deep experience in analytics, data governance, and ML-driven insight pipelines, Akintunde builds the systems that turn property and market data into investor-grade signals. He is focused on reliable data operations, reproducible models, and clear reporting that supports strategic decision-making and demonstrates measurable value to stakeholders.",
       },
       // Add new team members here - they will automatically get consistent styling
       // {

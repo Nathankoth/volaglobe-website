@@ -23,12 +23,12 @@ const Leadership = () => {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Team Grid - Responsive: 3-col desktop, 2-col tablet, 1-col mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <div
               key={index}
-              className="text-center space-y-4 p-6"
+              className="text-center space-y-4 p-8 bg-white rounded-lg shadow-sm border border-gray-100"
             >
               {/* Profile Image - Consistent circular styling */}
               <TeamMemberPhoto 
@@ -40,11 +40,11 @@ const Leadership = () => {
 
               {/* Info */}
               <div className="space-y-3">
-                <h3 className="text-2xl font-heading font-bold text-foreground transition-colors duration-200 hover:text-accent">
+                <h3 className="text-[22px] font-bold text-foreground transition-colors duration-200 hover:text-accent">
                   {member.name}
                 </h3>
-                <p className="text-accent font-medium">{member.role}</p>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-[14px] text-[#72B01D] font-semibold">{member.role}</p>
+                <p className="text-[15px] text-[#454955] leading-relaxed">
                   {member.tagline}
                 </p>
                 <div className="flex items-center justify-center gap-3 pt-2">
