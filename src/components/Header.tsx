@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[220ms] ease-out ${
+      className={`sticky top-0 z-50 transition-all duration-[220ms] ease-out ${
         isScrolled 
           ? "bg-primary/[0.88] shadow-elevated border-b border-white/[0.06]" 
           : "bg-primary/[0.28] border-b border-white/[0.06]"
@@ -45,41 +46,18 @@ const Header = () => {
         WebkitBackdropFilter: "blur(8px) saturate(1.05)",
       }}
     >
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="nav-container max-w-[1200px] mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Desktop/Tablet: Full wordmark, Mobile: Mark only */}
-          <div className="flex-shrink-0">
-            <button
+          <div className="brand flex-shrink-0">
+            <Logo 
               onClick={() => scrollToSection("hero")}
-              className="flex items-center hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded"
-              aria-label="Volaris — brand logo"
-            >
-              <img 
-                src={siteConfig.navigation.logo.full} 
-                alt="Volaris Global" 
-                className="brand-logo hidden sm:block"
-                style={{
-                  height: '48px',
-                  maxHeight: '56px',
-                  width: 'auto',
-                  display: 'block'
-                }}
-              />
-              <img 
-                src={siteConfig.navigation.logo.mark} 
-                alt="Volaris Global" 
-                className="brand-logo sm:hidden"
-                style={{
-                  height: '40px',
-                  width: 'auto',
-                  display: 'block'
-                }}
-              />
-            </button>
+              showMarkOnly={false}
+            />
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-8" role="navigation">
+          <nav className="nav-center hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-8" role="navigation">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -92,7 +70,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex flex-shrink-0">
+          <div className="nav-cta hidden md:flex flex-shrink-0">
             <Button
               onClick={() =>
                 (window.location.href =

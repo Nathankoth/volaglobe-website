@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import ServicesGrid from "@/components/ServicesGrid";
 
 const About = () => {
   const highlights = [
@@ -17,26 +18,20 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
               About Volaris Global
             </h2>
-            <div className="w-20 h-1 bg-accent mx-auto" />
+            <div className="w-20 h-1 bg-accent mx-auto mb-8" />
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed text-center max-w-3xl mx-auto">
+              Volaris Global Limited is a forward-thinking company dedicated to delivering 
+              professional, scientific, and technical services across diverse sectors. We 
+              combine innovative technology solutions with strategic business development 
+              to drive growth and create lasting value for our clients and partners.
+            </p>
           </div>
 
+          {/* Services Grid */}
+          <ServicesGrid />
+
           {/* Main Content */}
-          <div className="space-y-12">
-            {/* Paragraph */}
-            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed text-center">
-              VALORIS GLOBAL LIMITED PROVIDES<br/>
-              PROFESSIONAL, SCIENTIFIC, AND<br/>
-              TECHNICAL SERVICES INCLUDING<br/>
-              CONSULTANCY, RESEARCH AND<br/>
-              DEVELOPMENT, DIGITAL<br/>
-              TRANSFORMATION, AND THE APPLICATION<br/>
-              OF EMERGING TECHNOLOGIES SUCH AS<br/>
-              ARTIFICIAL INTELLIGENCE, DATA<br/>
-              ANALYTICS, AND ADVANCED<br/>
-              VISUALIZATION TOOLS, WHILE<br/>
-              SUPPORTING INNOVATION AND BUSINESS<br/>
-              DEVELOPMENT ACROSS DIVERSE.
-            </p>
+          <div className="space-y-12 mt-16">
 
             {/* Highlights */}
             <div className="grid md:grid-cols-2 gap-6">

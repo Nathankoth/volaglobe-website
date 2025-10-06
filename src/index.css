@@ -16,6 +16,31 @@
   }
 }
 
+/* Header Navigation Styles */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex: 1;
+}
+
+.brand {
+  flex: 0 0 auto;
+}
+
+.nav-cta {
+  flex: 0 0 auto;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -168,6 +193,30 @@ All colors MUST be HSL.
     color: hsl(var(--color-muted-text));
   }
 
+  /* Enhanced Typography for Polish */
+  .text-muted {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .text-center-max-width {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Card Styles */
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+
   /* Responsive Typography */
   @media (max-width: 480px) {
     h1 {
@@ -194,6 +243,17 @@ All colors MUST be HSL.
     .lead {
       font-size: 17px;
     }
+  }
+
+  /* Center text blocks should have max-width for readability */
+  .center-content {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Improved line length for readability */
+  .readable-width {
+    max-width: 70ch;
   }
 
   /* Entrance Animation Utility */
