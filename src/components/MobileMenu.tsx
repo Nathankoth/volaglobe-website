@@ -7,9 +7,10 @@ interface MobileMenuProps {
   onClose: () => void;
   navLinks: Array<{ label: string; id: string }>;
   scrollToSection: (id: string) => void;
+  hamburgerRef?: React.RefObject<HTMLButtonElement>;
 }
 
-const MobileMenu = ({ isOpen, onClose, navLinks, scrollToSection }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose, navLinks, scrollToSection, hamburgerRef }: MobileMenuProps) => {
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
@@ -23,8 +24,12 @@ const MobileMenu = ({ isOpen, onClose, navLinks, scrollToSection }: MobileMenuPr
       }, 100);
     } else {
       setFocusedIndex(-1);
+      // Return focus to hamburger button when menu closes
+      if (hamburgerRef?.current) {
+        hamburgerRef.current.focus();
+      }
     }
-  }, [isOpen]);
+  }, [isOpen, hamburgerRef]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

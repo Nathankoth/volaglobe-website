@@ -60,23 +60,25 @@ const ServicesGrid = () => {
               Delivering professional, scientific, and technical services across diverse sectors with strategic investment focus
             </p>
           </div>
+        </div>
+      </div>
 
-          {/* Services Grid */}
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={service.key} className="service-card">
-                <div className="icon">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {service.description}
-                </p>
+      {/* Full-bleed Services Grid */}
+      <div className="services-bleed">
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div key={service.key} className="service-card">
+              <div className="icon">
+                {service.icon}
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">
+                {service.title}
+              </h3>
+              <p className="text-foreground/70 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

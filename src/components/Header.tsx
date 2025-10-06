@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Logo from "@/components/Logo";
@@ -7,6 +7,7 @@ import MobileMenu from "@/components/MobileMenu";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +76,7 @@ const Header = () => {
 
           {/* Mobile Menu Button - Right side */}
           <button
+            ref={hamburgerRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="hamburger-btn"
             aria-label="Open navigation menu"
@@ -91,6 +93,7 @@ const Header = () => {
         onClose={() => setIsMobileMenuOpen(false)}
         navLinks={navLinks}
         scrollToSection={scrollToSection}
+        hamburgerRef={hamburgerRef}
       />
     </>
   );

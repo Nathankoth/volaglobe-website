@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Focus handling - remove pointer focus but preserve keyboard accessibility */
+:root {
+  --focus-ring: 3px solid rgba(114,176,29,0.18);
+}
+
+/* Hide focus outline for mouse/touch users, but show for keyboard users */
+a, button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, button:focus {
+  outline: none;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
 /* Brand Logo Styles */
 .brand-logo {
   height: 48px;
@@ -28,6 +48,17 @@
   border-radius: 14px;
   padding: 10px 18px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* Mobile header - full width with no insets */
+@media (max-width: 768px) {
+  .site-header {
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    padding: 8px 12px;
+  }
 }
 
 .header-inner {
@@ -102,12 +133,19 @@
   margin-top: 28px;
 }
 
-/* Services Grid */
+/* Services Grid - Full Bleed */
+.services-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 48px 20px;
+  background: transparent;
+}
+
 .services-grid {
   display: grid;
-  gap: 24px;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1100px;
+  gap: 24px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -505,6 +543,16 @@ All colors MUST be HSL.
   @media (max-width: 1024px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-bleed {
+      padding: 32px 20px;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
   }
 
