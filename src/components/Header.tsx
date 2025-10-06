@@ -35,11 +35,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="navbar fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
-      <div className="container mx-auto flex items-center justify-between px-8 py-4">
-        
+    <header className="header-overlay">
+      <div className="header-inner">
         {/* Logo on left */}
-        <div className="flex-shrink-0">
+        <div className="brand">
           <Logo 
             onClick={() => scrollToSection("hero")}
             showMarkOnly={false}
@@ -47,7 +46,7 @@ const Header = () => {
         </div>
 
         {/* Center nav links */}
-        <nav className="flex-1 flex justify-center space-x-10 text-white font-semibold hidden md:flex" role="navigation">
+        <nav className="nav-center hidden md:flex" role="navigation">
           {navLinks.map((link) => (
             <a 
               key={link.id}
@@ -64,10 +63,10 @@ const Header = () => {
         </nav>
 
         {/* CTA on right */}
-        <div className="flex-shrink-0">
+        <div className="nav-cta">
           <a
             href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
-            className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors"
+            className="btn--primary"
           >
             Request Investor Pack
           </a>
@@ -86,8 +85,8 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-black/95 backdrop-blur-md pb-6 animate-in fade-in slide-in-from-top-2 duration-200" role="navigation">
-          <div className="container mx-auto px-8 flex flex-col gap-4">
+        <nav className="md:hidden mobile-nav" role="navigation">
+          <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -103,7 +102,7 @@ const Header = () => {
             ))}
             <a
               href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold w-full text-center transition-colors"
+              className="btn--primary w-full text-center"
             >
               Request Investor Pack
             </a>

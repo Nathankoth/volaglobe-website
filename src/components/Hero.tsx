@@ -46,14 +46,14 @@ const Hero = () => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="cta-group">
             <Button
               size="lg"
               onClick={() =>
                 (window.location.href =
                   `mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`)
               }
-              className="bg-accent hover:bg-[hsl(100,60%,31%)] text-accent-foreground text-base px-8 min-h-[44px]"
+              className="btn--primary"
               aria-label="Request Investor Pack"
             >
               Request Investor Pack
