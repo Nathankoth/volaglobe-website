@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
+import ogunbajoImg from "@/assets/ogunbadru.jpg";
+import olaitanImg from "@/assets/olayton.jpg";
+import mrchrisImg from "@/assets/mrchris.jpg";
 
 const Leadership = () => {
   const [selectedMember, setSelectedMember] = useState<typeof team[0] | null>(null);
@@ -9,6 +12,7 @@ const Leadership = () => {
     {
       name: "Ogunbajo Nathaniel",
       initials: "ON",
+      image: ogunbajoImg,
       role: "Founder / Chief Executive Officer (CEO)",
       tagline: "Visionary founder driving growth and innovation.",
       linkedin: "https://www.linkedin.com/in/ogunbajo-nathaniel",
@@ -17,6 +21,7 @@ const Leadership = () => {
     {
       name: "Olaitan Hafis",
       initials: "OH",
+      image: olaitanImg,
       role: "Co-Founder / Strategic Partner",
       tagline: "Focused on operations, partnerships, and aligning execution.",
       linkedin: "https://www.linkedin.com/in/olayitan-hafis",
@@ -25,6 +30,7 @@ const Leadership = () => {
     {
       name: "Mr. Chris",
       initials: "MC",
+      image: mrchrisImg,
       role: "Advisory Partner",
       tagline: "Dedicated to supporting strategic development and long-term vision.",
       linkedin: "https://www.linkedin.com/in/mr-chris",
@@ -53,11 +59,13 @@ const Leadership = () => {
               key={index}
               className="text-center space-y-4 p-6"
             >
-              {/* Initials Avatar */}
-              <div className="w-24 h-24 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                <span className="text-2xl font-heading font-bold text-accent">
-                  {member.initials}
-                </span>
+              {/* Profile Image */}
+              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-accent/20 shadow-lg">
+                <img 
+                  src={member.image} 
+                  alt={`${member.name} - ${member.role}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Info */}
