@@ -71,7 +71,7 @@ export const siteConfig = {
         role: "Mentor · Advisor · Technical Lead (MCP, MCT)",
         tagline: "Technical mentor and advisor — cloud architecture, developer workflows, and production readiness.",
         linkedin: "https://www.linkedin.com/in/ugoji-nkechika-christian",
-        image: "/assets/branding/avatars/ugoji_nkechika_christian.png", // Provided avatar
+        image: "/images/ugojichris.jpg", // Provided avatar
         bioLong: "Ugoji Nkechika Christian (MCP, MCT) is a seasoned technical leader and mentor who specializes in scalable architecture, cloud strategy, and developer productivity. He advises Volaris on technical roadmaps, infrastructure choices, and secure deployment practices, ensuring that engineering decisions align with long-term business goals. Ugoji is particularly skilled at turning strategic product thinking into reliable, maintainable systems that investors can trust.",
       },
       {
@@ -80,7 +80,7 @@ export const siteConfig = {
         role: "Head of Data",
         tagline: "Head of Data — analytics, governance, and ML-backed insights for investment decisions.",
         linkedin: "https://www.linkedin.com/in/akintunde-abimbola-agbonde",
-        image: "/assets/branding/avatars/akintunde_abimbola_agbonde.png", // Provided avatar
+        image: "/images/akintunde.jpg", // Provided avatar
         bioLong: "Akintunde Abimbola Agbonde leads Volaris' data capabilities. A seasoned data leader with deep experience in analytics, data governance, and ML-driven insight pipelines, Akintunde builds the systems that turn property and market data into investor-grade signals. He is focused on reliable data operations, reproducible models, and clear reporting that supports strategic decision-making and demonstrates measurable value to stakeholders.",
       },
       // Add new team members here - they will automatically get consistent styling
