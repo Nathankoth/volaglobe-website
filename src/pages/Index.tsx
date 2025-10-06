@@ -1,10 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import ServicesGrid from "@/components/ServicesGrid";
 import VisionMission from "@/components/VisionMission";
 import Values from "@/components/Values";
-import InvestmentFocus from "@/components/InvestmentFocus";
 import Leadership from "@/components/Leadership";
 import InvestorCTA from "@/components/InvestorCTA";
 import Newsletter from "@/components/Newsletter";
@@ -17,10 +15,8 @@ const Index = () => {
       <main className="main-content">
         <Hero />
         <About />
-        <ServicesGrid />
         <VisionMission />
         <Values />
-        <InvestmentFocus />
         <Leadership />
         <InvestorCTA />
         <Newsletter />

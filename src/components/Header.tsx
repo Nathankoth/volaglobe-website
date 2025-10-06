@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Logo from "@/components/Logo";
+import MobileMenu from "@/components/MobileMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,81 +35,64 @@ const Header = () => {
   ];
 
   return (
-    <header className="header-overlay">
-      <div className="header-inner">
-        {/* Logo on left */}
-        <div className="brand">
-          <Logo 
-            onClick={() => scrollToSection("hero")}
-            showMarkOnly={false}
-          />
-        </div>
+    <>
+      <header className="site-header">
+        <div className="header-inner">
+          {/* Logo on left */}
+          <div className="brand">
+            <Logo 
+              onClick={() => scrollToSection("hero")}
+              showMarkOnly={false}
+            />
+          </div>
 
-        {/* Center nav links */}
-        <nav className="nav-center hidden md:flex" role="navigation">
-          {navLinks.map((link) => (
-            <a 
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(link.id);
-              }}
-              className="hover:text-green-400 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* CTA on right */}
-        <div className="nav-cta">
-          <a
-            href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
-            className="btn--primary"
-          >
-            Request Investor Pack
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-white hover:text-green-400 transition-colors"
-          aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <nav className="md:hidden mobile-nav" role="navigation">
-          <div className="flex flex-col gap-4">
+          {/* Center nav links - Desktop only */}
+          <nav className="nav-center" role="navigation">
             {navLinks.map((link) => (
-              <a
+              <a 
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection(link.id);
                 }}
-                className="text-left text-base font-medium text-white hover:text-green-400 transition-colors py-2"
+                className="hover:text-green-400 transition-colors"
               >
                 {link.label}
               </a>
             ))}
+          </nav>
+
+          {/* CTA on right - Desktop only */}
+          <div className="nav-cta">
             <a
               href={`mailto:${siteConfig.contact.investorEmail}?subject=Investor%20Enquiry`}
-              className="btn--primary w-full text-center"
+              className="btn--primary"
             >
               Request Investor Pack
             </a>
           </div>
-        </nav>
-      )}
-    </header>
+
+          {/* Mobile Menu Button - Right side */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="hamburger-btn"
+            aria-label="Open navigation menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <Menu size={24} />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        navLinks={navLinks}
+        scrollToSection={scrollToSection}
+      />
+    </>
   );
 };
 
