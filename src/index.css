@@ -33,10 +33,14 @@
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
+}
+
+.brand {
+  flex: 0 0 auto;
+  margin-right: auto;
 }
 
 .brand img {
@@ -50,16 +54,25 @@
   display: flex;
   justify-content: center;
   gap: 28px;
+  margin: 0 auto;
 }
 
 .nav-center a {
   color: #F3EFF5;
   text-decoration: none;
   font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-center a:hover {
+  background: rgba(114, 176, 29, 0.1);
 }
 
 .nav-cta {
   flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .hamburger-btn {
@@ -68,6 +81,7 @@
   padding: 8px;
   color: #F3EFF5;
   display: none;
+  margin-left: auto;
 }
 
 .hamburger-btn:hover {
@@ -479,8 +493,36 @@ All colors MUST be HSL.
     }
   }
 
+  /* Tablet Header */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .nav-center {
+      gap: 20px;
+    }
+    
+    .nav-center a {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+  }
+
   /* Responsive Header */
   @media (max-width: 768px) {
+    .site-header {
+      left: 0;
+      right: 0;
+      top: 0;
+      border-radius: 0;
+      padding: 8px 16px;
+    }
+    
+    .header-inner {
+      padding: 8px 0;
+    }
+    
+    .brand img {
+      height: 44px;
+    }
+    
     .nav-center {
       display: none;
     }
@@ -489,6 +531,8 @@ All colors MUST be HSL.
     }
     .hamburger-btn {
       display: inline-flex;
+      padding: 12px;
+      margin-left: auto;
     }
   }
 
