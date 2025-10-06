@@ -78,6 +78,33 @@ company: {
 },
 ```
 
+## Leadership Team Configuration
+
+Add or update team members in `src/config/site.ts`:
+
+```typescript
+leadership: {
+  teamMembers: [
+    {
+      name: "Team Member Name",
+      initials: "TM",
+      role: "Their Role",
+      tagline: "Brief description of their role.",
+      linkedin: "https://linkedin.com/in/their-profile",
+      image: "/assets/their-photo.jpg", // Add photo to src/assets/
+      bioLong: "Detailed bio for the team member...",
+    },
+    // Add more team members here
+  ],
+},
+```
+
+**Adding New Team Members:**
+1. Add their photo to `src/assets/` folder
+2. Add their information to the `teamMembers` array in `src/config/site.ts`
+3. They will automatically get consistent circular photo styling
+4. No code changes needed - just configuration!
+
 ## After Making Changes
 
 1. Save the `src/config/site.ts` file
@@ -87,6 +114,7 @@ company: {
    - Contact sections
    - Social media links
    - Email links
+   - Leadership team section
 
 ## Build and Deploy
 

@@ -2,41 +2,12 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
-import ogunbajoImg from "@/assets/ogunbadru.jpg";
-import olaitanImg from "@/assets/olayton.jpg";
-import mrchrisImg from "@/assets/mrchris.jpg";
+import TeamMemberPhoto from "./TeamMemberPhoto";
+import { siteConfig } from "@/config/site";
 
 const Leadership = () => {
-  const [selectedMember, setSelectedMember] = useState<typeof team[0] | null>(null);
-  const team = [
-    {
-      name: "Ogunbajo Nathaniel",
-      initials: "ON",
-      image: ogunbajoImg,
-      role: "Founder / Chief Executive Officer (CEO)",
-      tagline: "Visionary founder driving growth and innovation.",
-      linkedin: "https://www.linkedin.com/in/ogunbajo-nathaniel",
-      bioLong: "Ogunbajo Nathaniel is the Founder and Chief Executive Officer of Volaris Global Limited. With a clear vision of building a world-class company that bridges innovation, investment, and sustainable growth, he is the driving force behind the strategic direction of the business. Nathaniel brings a unique blend of entrepreneurial instinct, creative problem solving, and long-term vision that positions Volaris as an emerging player on the global stage. He focuses on shaping investor relations, guiding overall company culture, and creating an environment where innovation thrives. His leadership centers on building scalable systems, attracting the right partnerships, and making Volaris a trusted platform for growth-minded ventures.",
-    },
-    {
-      name: "Olaitan Hafis",
-      initials: "OH",
-      image: olaitanImg,
-      role: "Co-Founder / Strategic Partner",
-      tagline: "Focused on operations, partnerships, and aligning execution.",
-      linkedin: "https://www.linkedin.com/in/olayitan-hafis",
-      bioLong: "Olaitan Hafis is the Co-Founder and Strategic Partner at Volaris Global Limited. Hafis plays a central role in shaping the company's operational backbone and ensuring strategic objectives translate into actionable business outcomes. He is particularly focused on stakeholder engagement, building reliable structures for partnerships, and aligning operations with Volaris' long-term growth plans. With a strong emphasis on accountability, execution, and sustainable expansion, Hafis ensures that the company's day-to-day activities remain anchored in its vision. His perspective as a co-founder adds depth to the leadership team and reinforces Volaris' commitment to long-term investor confidence.",
-    },
-    {
-      name: "Mr. Chris",
-      initials: "MC",
-      image: mrchrisImg,
-      role: "Advisory Partner",
-      tagline: "Dedicated to supporting strategic development and long-term vision.",
-      linkedin: "https://www.linkedin.com/in/mr-chris",
-      bioLong: "Mr. Chris is an Advisory Partner for Volaris Global Limited. Bringing years of experience in technology development, product architecture, and mentorship, he provides crucial guidance on how Volaris builds and scales its technical foundations. His role extends beyond pure development — he shapes the way the company approaches problem-solving, system design, and digital transformation. As an advisor, he ensures Volaris makes forward-thinking decisions that stand up to both technical and market challenges. His mentorship helps nurture the team's capability to transform vision into a product pipeline that is both sustainable and competitive.",
-    },
-  ];
+  const [selectedMember, setSelectedMember] = useState<typeof siteConfig.leadership.teamMembers[0] | null>(null);
+  const team = siteConfig.leadership.teamMembers;
 
   return (
     <section id="team" className="py-24 bg-white border-b border-[#eaeaea]">
@@ -59,14 +30,13 @@ const Leadership = () => {
               key={index}
               className="text-center space-y-4 p-6"
             >
-              {/* Profile Image */}
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-accent/20 shadow-lg">
-                <img 
-                  src={member.image} 
-                  alt={`${member.name} - ${member.role}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {/* Profile Image - Consistent circular styling */}
+              <TeamMemberPhoto 
+                src={member.image}
+                alt={`${member.name} - ${member.role}`}
+                name={member.name}
+                role={member.role}
+              />
 
               {/* Info */}
               <div className="space-y-3">
