@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="hero relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -27,8 +27,8 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl">
+      <div className="hero__inner container mx-auto px-6 relative z-10">
+        <div className="hero-headline max-w-[780px] mx-auto text-center">
           {/* Kicker */}
           <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-4 fade-up">
             Volaris Global Limited

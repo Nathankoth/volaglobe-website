@@ -17,8 +17,8 @@ const Logo = ({
   const logoAlt = alt;
   
   const logoStyles = {
-    height: showMarkOnly ? '40px' : '48px',
-    maxHeight: showMarkOnly ? '40px' : '56px',
+    height: showMarkOnly ? '56px' : '72px',
+    maxHeight: showMarkOnly ? '56px' : '72px',
     width: 'auto',
     display: 'block'
   };

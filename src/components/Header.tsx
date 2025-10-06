@@ -35,20 +35,10 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-[220ms] ease-out ${
-        isScrolled 
-          ? "bg-primary/[0.88] shadow-elevated border-b border-white/[0.06]" 
-          : "bg-primary/[0.28] border-b border-white/[0.06]"
-      }`}
-      style={{
-        backdropFilter: "blur(8px) saturate(1.05)",
-        WebkitBackdropFilter: "blur(8px) saturate(1.05)",
-      }}
-    >
+    <header className="navbar sticky top-0 left-0 right-0 z-50 transition-all duration-[220ms] ease-out bg-primary/[0.88] backdrop-blur-[4px] border-b border-white/[0.06]">
       <div className="nav-container max-w-[1200px] mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo - Desktop/Tablet: Full wordmark, Mobile: Mark only */}
+        <div className="flex items-center gap-4 h-[72px]">
+          {/* Logo - Left side, larger size */}
           <div className="brand flex-shrink-0">
             <Logo 
               onClick={() => scrollToSection("hero")}
@@ -57,19 +47,22 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="nav-center hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-8" role="navigation">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-[#F3EFF5] hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
-              >
-                {link.label}
-              </button>
-            ))}
+          <nav className="nav-center hidden md:flex flex-1 items-center justify-center" role="navigation">
+            <ul className="flex gap-7 lg:gap-8 list-none m-0 p-0 items-center">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-sm font-semibold text-[#F3EFF5] hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1 min-h-[44px] min-w-[44px] flex items-center"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA - Right side */}
           <div className="nav-cta hidden md:flex flex-shrink-0">
             <Button
               onClick={() =>
