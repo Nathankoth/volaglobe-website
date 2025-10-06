@@ -4,7 +4,7 @@
 import ogunbajoImg from "@/assets/ogunbadru.jpg";
 import olaitanImg from "@/assets/olayton.jpg";
 import ugojiImg from "@/assets/ugoji_nkechika_christian.jpg";
-import akintundeImg from "@/assets/akintunde_abimbola_agbonde.jpg";
+import akintundeImg from "@/assets/akintunde_abimbola_agbonde_new.jpg";
 
 export const siteConfig = {
   // Company Information
