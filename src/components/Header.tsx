@@ -76,8 +76,9 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="hamburger-btn md:hidden"
-            aria-label="Open navigation menu"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <Menu size={24} />
           </button>

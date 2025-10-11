@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -10,6 +11,23 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Ensure hero content doesn't get covered by fixed header
+  useEffect(() => {
+    const adjustHeroPadding = () => {
+      const header = document.querySelector('.site-header') as HTMLElement;
+      const heroInner = document.querySelector('.hero__inner') as HTMLElement;
+      if (header && heroInner) {
+        const headerHeight = header.offsetHeight;
+        heroInner.style.paddingTop = `${headerHeight + 24}px`;
+      }
+    };
+
+    adjustHeroPadding();
+    window.addEventListener('resize', adjustHeroPadding);
+    
+    return () => window.removeEventListener('resize', adjustHeroPadding);
+  }, []);
 
   return (
     <section

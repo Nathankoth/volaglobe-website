@@ -75,7 +75,7 @@ const MobileMenu = ({ isOpen, onClose, navLinks, scrollToSection }: MobileMenuPr
   if (!isOpen) return null;
 
   return (
-    <div className="mobile-menu-overlay">
+    <div className="mobile-menu-overlay" id="mobile-menu">
       <div 
         className="mobile-menu-backdrop"
         onClick={onClose}
