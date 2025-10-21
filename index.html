@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D-Gate (Vistaforge) | Early Access - AI-Powered Property Analysis</title>
+    <meta name="description" content="Join the waitlist for D-Gate, the revolutionary AI-powered property analysis platform. Capture property details instantly and accelerate your real estate transactions." />
+    <meta name="author" content="D-Gate Team" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://d-gate.vercel.app/" />
+    <meta property="og:title" content="D-Gate (Vistaforge) | Early Access - AI-Powered Property Analysis" />
+    <meta property="og:description" content="Join the waitlist for D-Gate, the revolutionary AI-powered property analysis platform. Capture property details instantly and accelerate your real estate transactions." />
+    <meta property="og:image" content="/assets/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://d-gate.vercel.app/" />
+    <meta property="twitter:title" content="D-Gate (Vistaforge) | Early Access - AI-Powered Property Analysis" />
+    <meta property="twitter:description" content="Join the waitlist for D-Gate, the revolutionary AI-powered property analysis platform. Capture property details instantly and accelerate your real estate transactions." />
+    <meta property="twitter:image" content="/assets/og-image.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="/assets/branding/logo.svg" alt="D-Gate Logo" class="logo">
+                <span class="brand-text">D-Gate</span>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle premium theme">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </button>
+                <button class="btn btn-primary" id="joinWaitlistBtn">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="kicker">D-Gate / Vistaforge — Early Access</div>
+                    <h1 class="hero-title">Phone-first property snapshots that move deals faster</h1>
+                    <p class="hero-subtitle">Capture and analyze property details instantly to accelerate your real estate transactions with D-Gate's intuitive mobile platform.</p>
+                    
+                    <!-- Waitlist Form -->
+                    <form class="waitlist-form" id="waitlistForm">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="realtor">Realtor</option>
+                                <option value="investor">Investor</option>
+                                <option value="architect">Architect</option>
+                                <option value="surveyor">Surveyor</option>
+                                <option value="homebuyer">Homebuyer</option>
+                                <option value="homeowner">Homeowner</option>
+                                <option value="lawyer">Lawyer</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="role">Your Role</label>
+                        </div>
+                        <div class="form-group optional">
+                            <input type="text" id="company" name="company" placeholder="Company name (optional)">
+                            <label for="company">Company</label>
+                        </div>
+                        <div class="form-group optional">
+                            <select id="monthlyListings" name="monthlyListings">
+                                <option value="">Monthly listings (optional)</option>
+                                <option value="1-5">1-5</option>
+                                <option value="6-20">6-20</option>
+                                <option value="21-50">21-50</option>
+                                <option value="50+">50+</option>
+                            </select>
+                            <label for="monthlyListings">Monthly Listings</label>
+                        </div>
+                        <div class="form-group optional">
+                            <select id="howHeard" name="howHeard">
+                                <option value="">How did you hear about us? (optional)</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="search">Search Engine</option>
+                                <option value="referral">Referral</option>
+                                <option value="conference">Conference/Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="howHeard">How did you hear about us?</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-text">Join the Waitlist</span>
+                            <span class="btn-loading" style="display: none;">
+                                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                                Joining...
+                            </span>
+                        </button>
+                        <div class="form-error" id="formError" style="display: none;"></div>
+                    </form>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-secondary" id="requestDemoBtn">Request Early Demo</button>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Early Access Users</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">Q2 2024</span>
+                                <span class="stat-label">Launch Date</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="device-mockup-carousel">
+                        <div class="mockup active">
+                            <img src="/assets/mockups/mobile-1.png" alt="D-Gate Mobile App - Property Capture" />
+                        </div>
+                        <div class="mockup">
+                            <img src="/assets/mockups/mobile-2.png" alt="D-Gate Mobile App - Analysis Dashboard" />
+                        </div>
+                        <div class="mockup">
+                            <img src="/assets/mockups/mobile-3.png" alt="D-Gate Mobile App - Report Generation" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="indicator active" data-slide="0"></button>
+                        <button class="indicator" data-slide="1"></button>
+                        <button class="indicator" data-slide="2"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What the MVP does</h2>
+                <p>Core features that make property analysis faster and more accurate</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Snapshot</h3>
+                    <p>Capture property details with AI-powered image recognition and automatic data extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>ROI Triage</h3>
+                    <p>Instant investment analysis with automated ROI calculations and market comparisons.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <path d="M9 9h6v6H9z"/>
+                        </svg>
+                    </div>
+                    <h3>Secure Reports</h3>
+                    <p>Generate professional property reports with encrypted data and secure sharing options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Admin Queue</h3>
+                    <p>Streamlined workflow management with role-based access and approval processes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <line x1="20" y1="8" x2="20" y2="14"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                    </div>
+                    <h3>Role-aware Onboarding</h3>
+                    <p>Personalized experience based on your role with tailored features and workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1v6l4-4"/>
+                            <path d="M12 7l-4-4"/>
+                            <path d="M5 21h14"/>
+                            <path d="M3 21h2"/>
+                            <path d="M19 21h2"/>
+                        </svg>
+                    </div>
+                    <h3>Pay-per-verification</h3>
+                    <p>Flexible pricing model - pay only for the verifications you need, when you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How it works</h2>
+                <p>Three simple steps to transform your property analysis workflow</p>
+            </div>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Snap</h3>
+                        <p>Take photos of the property using your mobile device. Our AI automatically captures key details and measurements.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"/>
+                        <path d="M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Inference</h3>
+                        <p>Our AI analyzes the images and generates comprehensive property data, market insights, and investment metrics.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"/>
+                        <path d="M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Decide/Verify</h3>
+                        <p>Review the analysis, make informed decisions, and generate professional reports for stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role Benefits Section -->
+    <section class="role-benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for every role</h2>
+                <p>Tailored benefits for each professional in the real estate ecosystem</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                    </div>
+                    <h3>Realtor</h3>
+                    <ul>
+                        <li>Instant property valuations</li>
+                        <li>Automated listing descriptions</li>
+                        <li>Market trend analysis</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Investor</h3>
+                    <ul>
+                        <li>ROI calculations</li>
+                        <li>Investment risk assessment</li>
+                        <li>Portfolio optimization</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l8-4v18"/>
+                            <path d="M19 21V11l-6-4"/>
+                        </svg>
+                    </div>
+                    <h3>Architect</h3>
+                    <ul>
+                        <li>Structural analysis</li>
+                        <li>Design optimization</li>
+                        <li>Compliance checking</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h18v18H3z"/>
+                            <path d="M9 9h6v6H9z"/>
+                        </svg>
+                    </div>
+                    <h3>Surveyor</h3>
+                    <ul>
+                        <li>Precise measurements</li>
+                        <li>Boundary verification</li>
+                        <li>Legal documentation</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                    </div>
+                    <h3>Homebuyer/Homeowner</h3>
+                    <ul>
+                        <li>Property condition reports</li>
+                        <li>Maintenance recommendations</li>
+                        <li>Value tracking</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Lawyer</h3>
+                    <ul>
+                        <li>Legal compliance checks</li>
+                        <li>Document verification</li>
+                        <li>Due diligence reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Roadmap</h2>
+                <p>Our journey to revolutionize property analysis</p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Pilot Program</h3>
+                        <p>Q1 2024 - Closed beta with select partners</p>
+                        <span class="status completed">Completed</span>
+                    </div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Legal Verification</h3>
+                        <p>Q2 2024 - Enhanced compliance and legal document processing</p>
+                        <span class="status current">In Progress</span>
+                    </div>
+                </div>
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>3D Renders</h3>
+                        <p>Q3 2024 - AI-generated 3D property visualizations</p>
+                        <span class="status upcoming">Coming Soon</span>
+                    </div>
+                </div>
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Market Insights</h3>
+                        <p>Q4 2024 - Advanced market analytics and predictions</p>
+                        <span class="status upcoming">Planned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pricing</h2>
+                <p>Flexible plans for every need</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul>
+                        <li>5 property snapshots</li>
+                        <li>Basic analysis</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn btn-outline">Details to waitlist</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul>
+                        <li>Unlimited snapshots</li>
+                        <li>Advanced AI analysis</li>
+                        <li>Priority support</li>
+                        <li>Custom reports</li>
+                    </ul>
+                    <button class="btn btn-primary">Details to waitlist</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Team collaboration</li>
+                        <li>API access</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <button class="btn btn-outline">Details to waitlist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What early users say</h2>
+                <p>Feedback from our pilot program participants</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"D-Gate has revolutionized how we analyze properties. What used to take hours now takes minutes."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <span>Senior Realtor, Century 21</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The AI accuracy is incredible. It's like having a property expert in your pocket."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <span>Real Estate Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Finally, a tool that understands the complexity of property analysis. Game changer."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Dr. Jennifer Walsh</h4>
+                            <span>Property Surveyor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about D-Gate</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>When will D-Gate be available?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're targeting a Q2 2024 launch for our public beta. Early access users will get priority access and special pricing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What devices are supported?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>D-Gate works on iOS and Android devices. We're also developing a web version for desktop users.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How accurate is the AI analysis?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI achieves 95%+ accuracy in property analysis based on our pilot program results. We continuously improve through machine learning.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is my data secure?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use enterprise-grade encryption, comply with GDPR and CCPA, and never share your data with third parties without consent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/assets/branding/logo.svg" alt="D-Gate Logo" class="logo">
+                    <span class="brand-text">D-Gate</span>
+                    <p>Revolutionizing property analysis with AI</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#roadmap">Roadmap</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="https://twitter.com/dgate" target="_blank" rel="noopener">Twitter</a>
+                        <a href="https://linkedin.com/company/dgate" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:hello@dgate.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-Gate (Vistaforge). All rights reserved.</p>
+                <div class="footer-actions">
+                    <button class="btn btn-primary" id="footerJoinWaitlist">Join Waitlist</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Welcome to D-Gate!</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                </div>
+                <h4>You're on the list!</h4>
+                <p>Thank you for joining our waitlist. We'll notify you as soon as D-Gate is available for early access.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="shareBtn">Share with Friends</button>
+                    <button class="btn btn-secondary" id="inviteBtn">Invite a Friend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="sticky-cta" id="stickyCta">
+        <button class="btn btn-primary btn-large" id="stickyJoinBtn">
+            Join the Waitlist
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
