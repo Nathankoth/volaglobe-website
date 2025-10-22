@@ -13,7 +13,7 @@
 - [Quick Start](#quick-start)
 - [Deployment Options](#deployment-options)
   - [Option 1: Docker (Recommended)](#option-1-docker-recommended)
-  - [Option 2: Namecheap Shared Hosting (FTP/SFTP)](#option-2-namecheap-shared-hosting-ftpsftp)
+  - [Option 2: Shared Hosting (FTP/SFTP)](#option-2-shared-hosting-ftpsftp)
   - [Option 3: VPS Deployment](#option-3-vps-deployment)
 - [CI/CD with GitHub Actions](#cicd-with-github-actions)
 - [Design System](#design-system)
@@ -229,13 +229,13 @@ docker exec -it volaris-web sh
 
 ---
 
-### Option 2: Namecheap Shared Hosting (FTP/SFTP)
+### Option 2: Shared Hosting (FTP/SFTP)
 
-Namecheap cPanel hosting supports static site uploads via FTP/SFTP.
+Most shared hosting providers with cPanel support static site uploads via FTP/SFTP.
 
 #### Prerequisites
-- Namecheap hosting account with cPanel access
-- FTP/SFTP credentials (available in Namecheap dashboard)
+- Shared hosting account with cPanel access
+- FTP/SFTP credentials (available in hosting dashboard)
 
 #### Step 1: Build the Site
 
@@ -249,7 +249,7 @@ npm run build
 
 **Option A: Using FileZilla (GUI)**
 1. Download [FileZilla](https://filezilla-project.org/)
-2. Connect to your Namecheap FTP:
+2. Connect to your hosting FTP:
    - **Host:** ftp.yourdomain.com (or IP from cPanel)
    - **Username:** Your cPanel username
    - **Password:** Your cPanel password
@@ -269,7 +269,7 @@ lftp -u "FTP_USERNAME,FTP_PASSWORD" ftp.yourdomain.com -e "mirror -R ./dist /pub
 ```
 
 **Option C: Using cPanel File Manager**
-1. Log in to your Namecheap cPanel
+1. Log in to your hosting cPanel
 2. Open **File Manager**
 3. Navigate to `public_html/`
 4. Click **Upload** and select all files from `./dist/`
@@ -277,11 +277,11 @@ lftp -u "FTP_USERNAME,FTP_PASSWORD" ftp.yourdomain.com -e "mirror -R ./dist /pub
 
 #### Step 3: Configure Domain & SSL
 
-1. In Namecheap cPanel, go to **Domains** → ensure your domain points to `public_html/`
+1. In your hosting cPanel, go to **Domains** → ensure your domain points to `public_html/`
 2. Enable **AutoSSL** or install **Let's Encrypt SSL** via cPanel
 3. Test your site: https://yourdomain.com
 
-#### GitHub Actions Auto-Deploy to Namecheap
+#### GitHub Actions Auto-Deploy to Shared Hosting
 
 See [CI/CD with GitHub Actions](#cicd-with-github-actions) section below.
 
@@ -389,7 +389,7 @@ This repository includes a GitHub Actions workflow (`.github/workflows/ci-deploy
 1. ✅ Builds the site on every push to `main`
 2. ✅ Runs linting (if configured)
 3. ✅ Creates build artifacts
-4. ✅ Deploys to Namecheap via FTP (when secrets are configured)
+4. ✅ Deploys to shared hosting via FTP (when secrets are configured)
 5. ✅ Creates GitHub Releases with downloadable build archives
 
 ### Setup GitHub Secrets
@@ -398,7 +398,7 @@ To enable auto-deploy, add these secrets in your GitHub repository:
 
 **Settings → Secrets and variables → Actions → New repository secret**
 
-#### For Namecheap FTP Deploy:
+#### For Shared Hosting FTP Deploy:
 - `FTP_HOST` → e.g., `ftp.yourdomain.com`
 - `FTP_USERNAME` → Your cPanel username
 - `FTP_PASSWORD` → Your cPanel password
@@ -557,10 +557,10 @@ docker-compose up -d
 
 ### FTP Upload Issues
 
-**Problem:** Files won't upload to Namecheap
+**Problem:** Files won't upload to shared hosting
 
 **Solutions:**
-1. Verify FTP credentials in Namecheap cPanel
+1. Verify FTP credentials in hosting cPanel
 2. Check firewall settings (port 21 for FTP, 22 for SFTP)
 3. Try SFTP instead of FTP
 4. Use cPanel File Manager as fallback
@@ -577,7 +577,7 @@ docker-compose up -d
 
 ### SSL Certificate Issues
 
-**Namecheap:**
+**Shared Hosting:**
 - Enable AutoSSL in cPanel → SSL/TLS Status
 - Wait 10-15 minutes for certificate provisioning
 
@@ -606,11 +606,11 @@ npm run build
 
 ### Step 2: Deploy to Your Own Infrastructure
 
-Choose one of the deployment options above (Docker, Namecheap, VPS).
+Choose one of the deployment options above (Docker, Shared Hosting, VPS).
 
 ### Step 3: Update DNS
 
-1. Log in to your domain registrar (Namecheap, GoDaddy, etc.)
+1. Log in to your domain registrar (GoDaddy, etc.)
 2. Update A record to point to your new host's IP
 3. Update CNAME if using a subdomain
 4. Wait 24-72 hours for DNS propagation

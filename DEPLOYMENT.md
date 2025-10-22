@@ -11,7 +11,7 @@
 3. [Production Build](#production-build)
 4. [Deployment Methods](#deployment-methods)
    - [Method 1: Docker on Local Machine](#method-1-docker-on-local-machine)
-   - [Method 2: Namecheap Shared Hosting](#method-2-namecheap-shared-hosting)
+   - [Method 2: Shared Hosting](#method-2-shared-hosting)
    - [Method 3: DigitalOcean VPS](#method-3-digitalocean-vps)
    - [Method 4: AWS EC2](#method-4-aws-ec2)
 5. [Post-Deployment Checklist](#post-deployment-checklist)
@@ -28,7 +28,7 @@ Before deploying, ensure you have:
 - ✅ GitHub account with repository access
 - ✅ Domain name (e.g., volarisglobal.com)
 - ✅ Hosting account or VPS (choose one):
-  - Namecheap shared hosting with cPanel
+  - Shared hosting with cPanel
   - DigitalOcean Droplet ($6/month)
   - AWS EC2 instance (t2.micro free tier)
   - Any VPS provider (Hetzner, Linode, Vultr, etc.)
@@ -163,7 +163,7 @@ docker rmi volaris-site:latest
 
 ---
 
-### Method 2: Namecheap Shared Hosting
+### Method 2: Shared Hosting
 
 **Best for:** Simple deployment, low cost ($2-5/month)
 
@@ -176,7 +176,7 @@ npm run build
 
 #### Step 2: Get FTP Credentials
 
-1. Log in to [Namecheap account](https://www.namecheap.com/myaccount/)
+1. Log in to your hosting account
 2. Navigate to **Hosting List**
 3. Click **Manage** next to your hosting package
 4. Go to **Advanced** → **FTP Accounts** or **cPanel** → **FTP Accounts**
@@ -393,7 +393,7 @@ systemctl status caddy
 
 #### Step 9: Point Domain to VPS
 
-1. Log in to your domain registrar (Namecheap, GoDaddy, etc.)
+1. Log in to your domain registrar (GoDaddy, etc.)
 2. Go to DNS settings
 3. Add/Update A record:
    - **Type:** A
@@ -567,7 +567,7 @@ docker-compose up -d --build
 - Email: invest@volarisglobal.com
 - Docker Docs: https://docs.docker.com/
 - DigitalOcean Tutorials: https://www.digitalocean.com/community/tutorials
-- Namecheap Knowledge Base: https://www.namecheap.com/support/knowledgebase/
+- Shared Hosting Knowledge Base: Check your hosting provider's documentation
 
 **Common Issues:**
 - [Docker container won't start](#troubleshooting-docker)
